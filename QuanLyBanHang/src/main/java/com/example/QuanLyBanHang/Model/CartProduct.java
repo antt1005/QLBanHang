@@ -3,18 +3,10 @@ package com.example.QuanLyBanHang.Model;
 
 import jakarta.persistence.*;
 import lombok.Data;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import org.springframework.stereotype.Controller;
 
 @Data
 @Entity
 @Table(name = "CartProduct")
-@Controller
-@NoArgsConstructor
-@Getter
-@Setter
 public class CartProduct {
 
     @Id

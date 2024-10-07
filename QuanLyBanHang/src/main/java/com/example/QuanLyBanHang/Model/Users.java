@@ -1,24 +1,15 @@
 package com.example.QuanLyBanHang.Model;
 
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import org.springframework.stereotype.Controller;
 
 import java.util.List;
 
 @Data
 @Entity
 @Table(name = "Users")
-@Controller
-@NoArgsConstructor
-@Getter
-@Setter
 public class Users {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

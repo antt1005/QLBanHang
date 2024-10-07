@@ -2,18 +2,11 @@ package com.example.QuanLyBanHang.Model;
 
 import jakarta.persistence.*;
 import lombok.Data;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import org.springframework.stereotype.Controller;
+
 
 @Data
 @Entity
 @Table(name = "Product")
-@Controller
-@NoArgsConstructor
-@Getter
-@Setter
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
