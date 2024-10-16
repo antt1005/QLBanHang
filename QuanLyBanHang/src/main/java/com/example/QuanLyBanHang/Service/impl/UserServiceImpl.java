@@ -3,6 +3,7 @@ package com.example.QuanLyBanHang.Service.impl;
 import com.example.QuanLyBanHang.Model.Users;
 import com.example.QuanLyBanHang.Repository.UserRepo;
 import com.example.QuanLyBanHang.Service.UserService;
+import com.example.QuanLyBanHang.request.UserSaveRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,8 +16,11 @@ public class UserServiceImpl implements UserService {
     private UserRepo repo;
 
     @Override
-    public Users cread(Users user) {
-        return repo.save(user);
+    public UserSaveRequest cread(UserSaveRequest usersave) {
+        Users users = new Users(usersave.getUserName(),usersave.getPassWord(),usersave.getEmail()
+                ,usersave.getAddress(),usersave.getPhoneNumber(),usersave.getStatus());
+        repo.save(users);
+        return usersave;
     }
 
     @Override

@@ -2,7 +2,9 @@ package com.example.QuanLyBanHang.Controller;
 
 
 import com.example.QuanLyBanHang.Model.Users;
-import com.example.QuanLyBanHang.Service.impl.UserServiceImpl;
+import com.example.QuanLyBanHang.Service.UserService;
+import com.example.QuanLyBanHang.request.UserSaveRequest;
+import com.example.QuanLyBanHang.validate.UserValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,7 +14,9 @@ import java.util.List;
 @RequestMapping("/users")
 public class UserController {
     @Autowired
-    private UserServiceImpl service;
+    private UserService service;
+    @Autowired
+    private UserValidator  validator;
 
     @GetMapping("/getAll")
     public List<Users> getAll(){
@@ -28,9 +32,9 @@ public class UserController {
        return "thất bại";
     }
     @PostMapping("/create")
-    public String create(@RequestBody Users users){
-        Users usercreate = service.cread(users);
-        return "thêm thành công"+users.toString();
+    public UserSaveRequest create(@RequestBody UserSaveRequest users){
+        validator.validateStaffSaveRequest(users);
+        return service.cread(users);
     }
     @PutMapping("/update/{id}")
     public String update(@PathVariable Integer id,@RequestBody Users users){

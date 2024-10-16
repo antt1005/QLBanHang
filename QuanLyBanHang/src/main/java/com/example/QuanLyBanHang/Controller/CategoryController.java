@@ -2,7 +2,7 @@ package com.example.QuanLyBanHang.Controller;
 
 
 import com.example.QuanLyBanHang.Model.Category;
-import com.example.QuanLyBanHang.Service.impl.CategoryServiceImpl;
+import com.example.QuanLyBanHang.Service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,7 +13,7 @@ import java.util.List;
 public class CategoryController {
 
     @Autowired
-    private CategoryServiceImpl service;
+    private CategoryService service;
 
     @GetMapping("/getAll")
     public List<Category> getAll(){

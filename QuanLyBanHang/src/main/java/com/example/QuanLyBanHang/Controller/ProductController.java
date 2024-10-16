@@ -2,7 +2,7 @@ package com.example.QuanLyBanHang.Controller;
 
 
 import com.example.QuanLyBanHang.Model.Product;
-import com.example.QuanLyBanHang.Service.impl.ProductServiceImpl;
+import com.example.QuanLyBanHang.Service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,7 +12,7 @@ import java.util.List;
 @RequestMapping("/product")
 public class ProductController {
     @Autowired
-    private ProductServiceImpl service;
+    private ProductService service;
 
     @GetMapping("/getAll")
     public List<Product> getAll(){

@@ -1,7 +1,7 @@
 package com.example.QuanLyBanHang.Controller;
 
 import com.example.QuanLyBanHang.Model.CartProduct;
-import com.example.QuanLyBanHang.Service.impl.CartProductServiceImpl;
+import com.example.QuanLyBanHang.Service.CartProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,7 +11,7 @@ import java.util.List;
 @RequestMapping("/cartProduct")
 public class CartProductcontroller {
     @Autowired
-    private CartProductServiceImpl service;
+    private CartProductService service;
 
     @GetMapping("/getAll")
     public List<CartProduct> getAll() {

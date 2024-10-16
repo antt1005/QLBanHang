@@ -1,17 +1,20 @@
 package com.example.QuanLyBanHang.Model;
 
 
+import com.example.QuanLyBanHang.Base.BaseEntity;
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.RequiredArgsConstructor;
 
-@Data
+@EqualsAndHashCode(callSuper = true)
 @Entity
 @Table(name = "CartProduct")
-public class CartProduct {
+@Data
+@RequiredArgsConstructor
+public class CartProduct extends BaseEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+
 
     @ManyToOne
     @JoinColumn(name = "idCart")

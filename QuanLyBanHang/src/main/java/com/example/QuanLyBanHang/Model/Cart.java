@@ -1,18 +1,17 @@
 package com.example.QuanLyBanHang.Model;
 
+import com.example.QuanLyBanHang.Base.BaseEntity;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.*;
 
 
-@Data
+@EqualsAndHashCode(callSuper = true)
 @Entity
 @Table(name = "Cart")
-
-public class Cart {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idCart;
+@Data
+@RequiredArgsConstructor
+public class Cart extends BaseEntity {
 
     private String name;
 
